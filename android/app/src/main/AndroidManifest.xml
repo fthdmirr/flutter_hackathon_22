@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.anonims.flutter_hackathon_2022">
    <application
-        android:label="flutter_hackathon_2022"
+        android:label="Meetify"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

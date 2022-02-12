@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
 import 'package:kartal/kartal.dart';
 
 class PositionedContainer extends StatelessWidget {
@@ -14,7 +15,7 @@ class PositionedContainer extends StatelessWidget {
     this.bottomRight = Radius.zero,
     this.angle,
     required this.title,
-    required this.icon,
+    required this.image,required this.onTap,
   }) : super(key: key);
   final double? positionedTop;
   final double? positionedBottom;
@@ -28,7 +29,8 @@ class PositionedContainer extends StatelessWidget {
   final Radius topLeft;
   final Radius bottomRight;
   final String title;
-  final Icon icon;
+  final String image;
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -38,23 +40,43 @@ class PositionedContainer extends StatelessWidget {
         left: positionedLeft,
         child: Transform.rotate(
           angle: angle ?? 0,
-          child: Container(
-            height: context.dynamicHeight(0.12),
-            width: context.dynamicWidth(0.25),
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-              borderRadius: BorderRadius.only(
-                bottomLeft: bottomLeft,
-                topRight: topRight,
-                topLeft: topLeft,
-                bottomRight: bottomRight,
+          child: InkWell(
+            onTap: onTap,
+            child: Container(
+              height: context.dynamicHeight(0.12),
+              width: context.dynamicWidth(0.25),
+              decoration: BoxDecoration(
+                color: AppColors.secondaryColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: bottomLeft,
+                  topRight: topRight,
+                  topLeft: topLeft,
+                  bottomRight: bottomRight,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
               ),
+              child: Center(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(image, height: context.dynamicHeight(0.08)),
+                  Text(
+                    title,
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                        color: AppColors.accentColor),
+                  )
+                ],
+              )),
             ),
-            child: Center(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [icon, Text(title)],
-            )),
           ),
         ));
   }
