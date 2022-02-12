@@ -1,0 +1,57 @@
+name: flutter_hackathon_2022
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #ui
+  cupertino_icons: ^1.0.2
+  lottie: ^1.2.1
+  shimmer: ^2.0.0
+  animations: ^2.0.2
+  slide_to_act: ^2.0.1
+
+  #state manangment
+  provider: ^6.0.2
+  bloc: ^8.0.2
+  flutter_bloc: ^8.0.1
+
+  #catch
+  shared_preferences: ^2.0.12
+  hive_flutter: ^1.1.0
+
+  #util
+  kartal: ^2.3.1
+  json_annotation: ^4.4.0
+  json_serializable: ^6.1.4
+  cached_network_image: ^3.2.0
+  awesome_notifications: ^0.6.21
+  equatable: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+  #generator
+  build_runner: ^2.1.7
+  hive_generator: ^1.1.2
+
+  #test
+  test: ^1.17.12
+  bloc_test: ^9.0.2
+  
+flutter:
+  uses-material-design: true
+
+  assets:
+   - assets/lotties/
+   - assets/images/
+
+ 
