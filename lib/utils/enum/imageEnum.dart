@@ -1,0 +1,2 @@
+
+enum ImageEnum{man,woman }
