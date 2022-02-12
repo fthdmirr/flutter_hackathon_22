@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon_2022/core/extension/string_extension.dart';
+import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
+import 'package:flutter_hackathon_2022/view/home/group/group_add_view.dart';
+import 'package:flutter_hackathon_2022/widget/circle_avatar_gender.dart';
 import 'package:kartal/kartal.dart';
 
 class GroupView extends StatelessWidget {
@@ -7,10 +11,17 @@ class GroupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+      backgroundColor: AppColors.mainColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.navigateToPage(GroupViewAdd());
+        },
+        child: Icon(Icons.add),
+        backgroundColor: AppColors.accentColor,
+      ),
       appBar: AppBar(
         title: Text('Group'),
+        backgroundColor: AppColors.accentColor,
       ),
       body: Padding(
         padding: context.horizontalPaddingLow,
@@ -20,9 +31,9 @@ class GroupView extends StatelessWidget {
           itemBuilder: (context, index) => Padding(
             padding: context.verticalPaddingLow,
             child: Container(
-              height: context.dynamicHeight(0.1650),
+              height: context.dynamicHeight(0.2),
               decoration: BoxDecoration(
-                  color: context.randomColor,
+                  color: AppColors.secondaryColor,
                   borderRadius: BorderRadius.circular(context.normalValue)),
               child: Padding(
                 padding: context.paddingLow,
@@ -50,14 +61,22 @@ class GroupView extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: context.dynamicHeight(0.05),
+                      height: context.dynamicHeight(0.08),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 3,
                         itemBuilder: (context, index) => Row(
                           children: [
                             context.emptySizedWidthBoxLow,
-                            CircleAvatar(),
+                            Column(
+                              children: [
+                                CircleAvatarGender(image: 'man'.toJpg),
+                                Text(
+                                  'Ahmet',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ),

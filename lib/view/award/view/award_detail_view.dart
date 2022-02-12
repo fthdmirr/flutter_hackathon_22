@@ -10,7 +10,7 @@ class AwardViewDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColors.green,
+        backgroundColor: AppColors.mainColor,
         body: Padding(
           padding: context.paddingLow,
           child: Column(
