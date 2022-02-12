@@ -12,7 +12,7 @@ class AwardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: AppColors.mainColor,
       appBar: AppBar(title: Text('Awards')),
       body: Stack(
         children: [
@@ -64,7 +64,7 @@ class AwardView extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     width: context.dynamicWidth(0.05),
                     height: context.dynamicHeight(0.5),
-                    color: AppColors.green,
+                    color: AppColors.secondaryColor,
                   ),
                 ),
               )

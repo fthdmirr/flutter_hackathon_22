@@ -33,6 +33,7 @@ dependencies:
   cached_network_image: ^3.2.0
   awesome_notifications: ^0.6.21
   equatable: ^2.0.3
+  google_fonts: ^2.3.1
 
 dev_dependencies:
   flutter_test:

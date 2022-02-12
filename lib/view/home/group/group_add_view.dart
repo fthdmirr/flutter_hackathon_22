@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
 import 'package:kartal/kartal.dart';
 
-class RegisterAdView extends StatelessWidget {
-  const RegisterAdView({Key? key}) : super(key: key);
+import '../../../core/theme/app_colors.dart';
+
+class GroupViewAdd extends StatelessWidget {
+  const GroupViewAdd({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,23 +17,30 @@ class RegisterAdView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               context.emptySizedHeightBoxHigh,
-              Text('İlan Ekle',
+              Text('Grup Ekle',
                   style: context.textTheme.headline3?.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.black)),
               context.emptySizedHeightBoxHigh,
               TextFormField(
-                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  label: Text('Günlük Adım Hedefi'),
+                  label: Text('Grup İsmi'),
                 ),
               ),
-              context.emptySizedHeightBoxLow3x,
+              context.emptySizedHeightBoxLow,
               TextFormField(
                   decoration: InputDecoration(
                       label: Text('Lokasyon'),
                       hintText:
                           'Kullandığın veya tercih ettiğin parklar yürüyüş alanları')),
-              context.emptySizedHeightBoxLow3x,
+              context.emptySizedHeightBoxLow,
+              TextFormField(
+                  decoration: InputDecoration(label: Text('Kişiler'))),
+              context.emptySizedHeightBoxLow,
+              TextFormField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    label: Text('Kişi sayısı'),
+                  )),
               context.emptySizedHeightBoxHigh,
               Center(
                   child: ElevatedButton(

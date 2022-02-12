@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_2022/core/extension/string_extension.dart';
 import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
+import 'package:flutter_hackathon_2022/widget/circle_avatar_gender.dart';
 import 'package:kartal/kartal.dart';
 import 'package:lottie/lottie.dart';
 
@@ -11,7 +12,7 @@ class NotificationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColors.green,
+        backgroundColor: AppColors.accentColor,
         body: Padding(
           padding: context.paddingNormal,
           child: Column(
@@ -21,7 +22,8 @@ class NotificationView extends StatelessWidget {
                 children: [
                   Text(
                     'Bildirimler',
-                    style: TextStyle(color: AppColors.white, fontSize: 40),
+                    style: TextStyle(
+                        color: AppColors.secondaryColor, fontSize: 40),
                   ),
                   Lottie.asset('avocado'.toLottie,
                       height: context.dynamicHeight(0.1))
@@ -34,25 +36,20 @@ class NotificationView extends StatelessWidget {
                           padding: context.verticalPaddingLow,
                           child: Card(
                               child: ListTile(
-                            leading: CircleAvatar(),
-                            title: Text('Akşam Meltemi'),
-                            subtitle: Text('Ahmet-Mehmet-Cengiz'),
-                          )
-
-                              /*  Row(
+                            dense: true,
+                            leading: CircleAvatarGender(image: 'man'.toJpg),
+                            trailing: Icon(Icons.notifications),
+                            title: Row(
                               children: [
-                                Column(
-                                  children: [
-                                    Text('Akşam Meltemi'),
-                                    Text('Ahmet-Mehmet-Furkan')
-                                  ],
+                                Text(
+                                  'Akşam Meltemi',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                Expanded(
-                                    child: Lottie.asset('avocado'.toLottie,
-                                        height: context.dynamicHeight(0.1))),
+                                Text(' davet isteği yolladı'),
                               ],
-                            ), */
-                              ),
+                            ),
+                            subtitle: Text('Ahmet-Mehmet-Cengiz'),
+                          )),
                         )),
               ),
             ],
@@ -67,7 +64,7 @@ class NotificationView extends StatelessWidget {
       height: context.dynamicHeight(0.15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: AppColors.white,
+        color: AppColors.secondaryColor,
       ),
       child: Row(
         children: [
