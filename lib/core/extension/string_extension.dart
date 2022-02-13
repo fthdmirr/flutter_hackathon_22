@@ -3,6 +3,7 @@ extension AssetsExtension on String {
   String get toJpg => 'assets/images/$this.jpg';
   String get toLottie => 'assets/lotties/$this.json';
   String get toSVG => 'assets/svg/$this.svg';
+  String get toLogo => 'assets/logo/$this.png';
 }
 
 extension StringExtension on String {

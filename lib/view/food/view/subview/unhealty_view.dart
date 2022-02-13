@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon_2022/widget/food_container.dart';
+import '../../../../widget/food_container.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../model/food_model.dart';

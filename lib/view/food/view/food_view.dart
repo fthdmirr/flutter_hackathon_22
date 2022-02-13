@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
-import 'package:flutter_hackathon_2022/view/food/view_model/food_view_model.dart';
+import '../../../core/theme/app_colors.dart';
+import '../view_model/food_view_model.dart';
 
 import 'subview/healthy_view.dart';
 import 'subview/unhealty_view.dart';

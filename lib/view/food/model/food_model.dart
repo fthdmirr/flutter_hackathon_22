@@ -6,3 +6,4 @@ class Food {
 
   Food(this.name, this.image, this.description, this.star);
 }
+

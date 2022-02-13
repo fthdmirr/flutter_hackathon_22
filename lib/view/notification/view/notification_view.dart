@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon_2022/core/extension/string_extension.dart';
-import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
-import 'package:flutter_hackathon_2022/widget/circle_avatar_gender.dart';
+import '../../../core/extension/string_extension.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../widget/circle_avatar_gender.dart';
 import 'package:kartal/kartal.dart';
 import 'package:lottie/lottie.dart';
 
@@ -30,27 +30,20 @@ class NotificationView extends StatelessWidget {
                 ],
               ),
               Expanded(
-                child: ListView.builder(
-                    itemCount: 3,
-                    itemBuilder: (context, index) => Padding(
-                          padding: context.verticalPaddingLow,
-                          child: Card(
-                              child: ListTile(
-                            dense: true,
-                            leading: CircleAvatarGender(image: 'man'.toJpg),
-                            trailing: Icon(Icons.notifications),
-                            title: Row(
-                              children: [
-                                Text(
-                                  'Akşam Meltemi',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text(' davet isteği yolladı'),
-                              ],
-                            ),
-                            subtitle: Text('Ahmet-Mehmet-Cengiz'),
-                          )),
-                        )),
+                child: Padding(
+                  padding: context.verticalPaddingLow,
+                  child: Column(
+                    children: [
+                      groupWidget(context, 'Akşam Sefası', 'group0',
+                          'Fatih-Cengiz-Furkan-Mert'),
+                      groupWidget(context, 'Girls', 'group2', 'Aslı-Gamze'),
+                      groupWidget(
+                          context, '800k Yasuo', 'group1', 'Anıl-Osman'),
+                      groupWidget(
+                          context, 'Gençler', 'group0', 'Merve-Pakize-Emrecan'),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
@@ -59,23 +52,22 @@ class NotificationView extends StatelessWidget {
     );
   }
 
-  Container withContainer(BuildContext context) {
-    return Container(
-      height: context.dynamicHeight(0.15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: AppColors.secondaryColor,
-      ),
-      child: Row(
+  Widget groupWidget(context, String name, String pic, String groupMembers) {
+    return Card(
+        child: ListTile(
+      dense: true,
+      leading: CircleAvatarGender(image: pic.toJpg),
+      trailing: Icon(Icons.notifications),
+      title: Row(
         children: [
           Text(
-            'Akşam Meltemi',
-            style: TextStyle(
-              color: Colors.green,
-            ),
-          )
+            name,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(' davet isteği yolladı'),
         ],
       ),
-    );
+      subtitle: Text(groupMembers),
+    ));
   }
 }

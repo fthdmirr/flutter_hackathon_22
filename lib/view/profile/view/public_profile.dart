@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon_2022/core/extension/string_extension.dart';
-import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
-import 'package:flutter_hackathon_2022/widget/circle_avatar_gender.dart';
+import '../../../core/extension/string_extension.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../widget/circle_avatar_gender.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../core/theme/app_colors.dart';

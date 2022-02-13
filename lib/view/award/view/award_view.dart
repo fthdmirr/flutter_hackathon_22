@@ -1,10 +1,10 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon_2022/core/extension/string_extension.dart';
-import 'package:flutter_hackathon_2022/core/theme/app_colors.dart';
-import 'package:flutter_hackathon_2022/view/award/model/award_enum.dart';
-import 'package:flutter_hackathon_2022/view/award/view/award_detail_view.dart';
+import '../../../core/extension/string_extension.dart';
+import '../../../core/theme/app_colors.dart';
+import '../model/award_enum.dart';
+import 'award_detail_view.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../widget/positioned_container.dart';

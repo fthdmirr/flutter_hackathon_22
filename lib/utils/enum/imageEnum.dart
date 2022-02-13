@@ -1,2 +1,0 @@
-
-enum ImageEnum{man,woman }

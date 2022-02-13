@@ -20,8 +20,9 @@ class UserAdapter extends TypeAdapter<User> {
       fields[0] as String,
       fields[1] as String,
       fields[2] as String,
-      fields[3] as String,
-      fields[4] as ImageEnum,
+      fields[3] as int,
+      fields[4] as ProfileImageEnum,
+      (fields[6] as List).cast<Group>(),
       dailyCount: fields[5] as int,
     );
   }
@@ -29,7 +30,7 @@ class UserAdapter extends TypeAdapter<User> {
   @override
   void write(BinaryWriter writer, User obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class UserAdapter extends TypeAdapter<User> {
       ..writeByte(4)
       ..write(obj.profileImage)
       ..writeByte(5)
-      ..write(obj.dailyCount);
+      ..write(obj.dailyCount)
+      ..writeByte(6)
+      ..write(obj.groups);
   }
 
   @override
