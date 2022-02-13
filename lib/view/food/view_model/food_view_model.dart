@@ -1,4 +1,4 @@
-import 'package:flutter_hackathon_2022/core/extension/string_extension.dart';
+import '../../../core/extension/string_extension.dart';
 
 import '../model/food_model.dart';
 
