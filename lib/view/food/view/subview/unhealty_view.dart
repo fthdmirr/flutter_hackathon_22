@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../utils/constants/dummy_data.dart';
 import '../../../../widget/food_container.dart';
 import 'package:kartal/kartal.dart';
 
@@ -16,10 +17,10 @@ class UnhealtyView extends StatelessWidget {
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, childAspectRatio: 2 / 3),
-          itemCount: 10,
+          itemCount: DummyDatas.unhealthyFoodList.length,
           itemBuilder: (BuildContext context, int index) {
             return FoodContainer(
-              food: unhealthyFood[index],
+              food: DummyDatas.unhealthyFoodList[index],
               accentColor: Colors.redAccent,
             );
           }),

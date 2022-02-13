@@ -1,11 +1,11 @@
 import '../../view/authentication/register/model/user_model.dart';
+import '../../view/food/model/food_model.dart';
 import '../../view/home/model/bulletin_model.dart';
 import '../../view/home/model/group_model.dart';
 import '../enum/image_enum.dart';
 
 class DummyDatas {
   static const List<String> bookNames = [
-    'Anna Karenia',
     'The Family Chao',
     'Sapiens',
     '1984',
@@ -46,7 +46,6 @@ class DummyDatas {
   static const List<String> foodsNames = [
     'Eggs',
     'Orange',
-    'Bananas',
     'Almonds',
     'Coconuts',
     'Broccoli',
@@ -107,4 +106,147 @@ class DummyDatas {
   ];
 
   static List<Group> groupList = [group1, group3, group4, group2];
+
+  static Food food0 = Food(
+    'Muz',
+    'assets/images/foods/muz.jfif',
+    'Muz,Cildi güzelleştiren ve mide hastalıklarını dindiren sağlıklı bir meyvedir.',
+    4,
+  );
+
+  static Food food1 = Food(
+    'Portakal',
+    'assets/images/foods/portakal.jfif',
+    'Portakal,Böbrek taşı oluşumunu engelleyen ve kan basıncını dengeleyen sağlıklı bir meyvedir.',
+    4,
+  );
+
+  static Food food2 = Food(
+    'Yumurta',
+    'assets/images/foods/yumurta.jfif',
+    'Yumurta,protein içerdiği temel aminoasitler sayesinde son derece yüksek kalitelidir.',
+    5,
+  );
+
+  static Food food3 = Food(
+    'Badem',
+    'assets/images/foods/badem.jfif',
+    'Badem,zayıflamaya yardımcı olur ve kemikleri güçlendirir.',
+    3,
+  );
+
+  static Food food4 = Food(
+    'Ceviz',
+    'assets/images/foods/ceviz.jpg',
+    'Ceviz,metabolizmayı iyileştirir.Vücuda bakır, kalsiyum, demir, selenyum, çinko gibi mineraller sağlar.',
+    4,
+  );
+
+  static Food food5 = Food(
+    'Biber',
+    'assets/images/foods/biber.jfif',
+    'Biberin kansere karşı koruyucu etkisi vardır ve göz sağlığının korunmasına yardımcı olur.',
+    4,
+  );
+
+  static Food food6 = Food(
+    'İncir',
+    'assets/images/foods/incir.jpg',
+    'İncir,astım ve bronşit hastalığına iyi gelir.',
+    5,
+  );
+
+  static Food food7 = Food(
+    'Zeytin',
+    'assets/images/foods/zeytin.jpg',
+    'Zeytin,sindirimi kolaylaştırır ve kalp sağlığını korur.',
+    4,
+  );
+
+  static Food food8 = Food(
+    'Nar',
+    'assets/images/foods/nar.jfif',
+    'Nar; kan basıncını, kötü kolesterolü ve kan şekerini düşür.',
+    5,
+  );
+
+  static Food food9 = Food(
+    'Balık',
+    'assets/images/foods/balik.jfif',
+    'Balık,bağışıklık sistemini korur,zeka gelişimine katkı sağlar ve diyabet riskini azaltır.',
+    5,
+  );
+
+  static List<Food> healthyFoodList = [
+    food0,
+    food1,
+    food2,
+    food3,
+    food4,
+    food5,
+    food6,
+    food7,
+    food8,
+    food9
+  ];
+
+  static Food food10 = Food(
+    'Pasta',
+    'assets/images/foods/cake.jpg',
+    'Pasta , içerdiği şeker ve kremadan dolayı oldukça zararlıdır.',
+    1,
+  );
+  static Food food11 = Food(
+    'Kahve',
+    'assets/images/foods/coffee.jpg',
+    'Kahve, içerdiği bol miktarda kafeinden dolayı fazla tüketilmesi zararlıdır.',
+    3,
+  );
+  static Food food12 = Food(
+    'Dondurma',
+    'assets/images/foods/ice_cream.jpg',
+    'Dondurma, içerdiği şeker ve hazır gıdalar sebebiyle zararlıdır.',
+    2,
+  );
+  static Food food13 = Food(
+    'Pizza',
+    'assets/images/foods/pizza.jpg',
+    'Pizza, içinde bulundurduğu fazla yağ ve karbonhidrat nedeniyle zararlıdır.',
+    1,
+  );
+  static Food food14 = Food(
+    'Makarna',
+    'assets/images/foods/makarna.jpg',
+    'Makarna, karbonhidrat bakımından zengin olduğu için fazla tüketimi zararlıdır.',
+    3,
+  );
+  static Food food15 = Food(
+    'Kola',
+    'assets/images/foods/kola.jpg',
+    'Kola, şekerli olmasının yanı sıra çok fazla kimyasal içermektedir. İçmeyiniz.',
+    1,
+  );
+  static Food food16 = Food(
+    'Patates Kızartması',
+    'assets/images/foods/patates.jpg',
+    'Patates kızartması, kızartılırken kullanılan yağ sebebiyle tüketimi sakıncalıdır.',
+    3,
+  );
+  static Food food17 = Food(
+    'Şeker',
+    'assets/images/foods/sugar.jpg',
+    'Aşırı tüketilmesi durumunda diyabet ve obezite riskini artırdığı için fazla tüketilmemelidir.',
+    2,
+  );
+
+  static List<Food> unhealthyFoodList = [
+    food10,
+    food11,
+    food12,
+    food13,
+    food14,
+    food15,
+    food16,
+    food17
+  ];
 }

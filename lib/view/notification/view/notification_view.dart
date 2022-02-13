@@ -18,38 +18,46 @@ class NotificationView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'Bildirimler',
-                    style: TextStyle(
-                        color: AppColors.secondaryColor, fontSize: 40),
-                  ),
-                  Lottie.asset('avocado'.toLottie,
-                      height: context.dynamicHeight(0.1))
-                ],
-              ),
+              titleWidet(context),
               Expanded(
-                child: Padding(
-                  padding: context.verticalPaddingLow,
-                  child: Column(
-                    children: [
-                      groupWidget(context, 'Akşam Sefası', 'group0',
-                          'Fatih-Cengiz-Furkan-Mert'),
-                      groupWidget(context, 'Girls', 'group2', 'Aslı-Gamze'),
-                      groupWidget(
-                          context, '800k Yasuo', 'group1', 'Anıl-Osman'),
-                      groupWidget(
-                          context, 'Gençler', 'group0', 'Merve-Pakize-Emrecan'),
-                    ],
-                  ),
-                ),
+                child: groupsWidget(context),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Padding groupsWidget(BuildContext context) {
+    return Padding(
+                padding: context.verticalPaddingLow,
+                child: Column(
+                  children: [
+                    groupWidget(context, 'Akşam Sefası', 'group0',
+                        'Fatih-Cengiz-Furkan-Mert'),
+                    groupWidget(context, 'Girls', 'group2', 'Aslı-Gamze'),
+                    groupWidget(
+                        context, '800k Yasuo', 'group1', 'Anıl-Osman'),
+                    groupWidget(
+                        context, 'Gençler', 'group0', 'Merve-Pakize-Emrecan'),
+                  ],
+                ),
+              );
+  }
+
+  Row titleWidet(BuildContext context) {
+    return Row(
+              children: [
+                Text(
+                  'Bildirimler',
+                  style: TextStyle(
+                      color: AppColors.secondaryColor, fontSize: 40),
+                ),
+                Lottie.asset('avocado'.toLottie,
+                    height: context.dynamicHeight(0.1))
+              ],
+            );
   }
 
   Widget groupWidget(context, String name, String pic, String groupMembers) {

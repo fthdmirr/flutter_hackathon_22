@@ -37,23 +37,27 @@ class RegisterBulletinView extends StatelessWidget {
                       hintText:
                           'Kullandığın veya tercih ettiğin parklar yürüyüş alanları')),
               context.emptySizedHeightBoxHigh,
-              Center(
-                  child: ElevatedButton(
-                child: Text('Tamam'),
-                onPressed: () {
-                  context.read<HomeViewModel>().addBulletin(context);
-                  context.pop();
-                },
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(AppColors.secondaryColor),
-                    foregroundColor:
-                        MaterialStateProperty.all(AppColors.accentColor)),
-              )),
+              buttonWidget(context),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Center buttonWidget(BuildContext context) {
+    return Center(
+                child: ElevatedButton(
+              child: Text('Tamam'),
+              onPressed: () {
+                context.read<HomeViewModel>().addBulletin(context);
+                context.pop();
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(AppColors.secondaryColor),
+                  foregroundColor:
+                      MaterialStateProperty.all(AppColors.accentColor)),
+            ));
   }
 }

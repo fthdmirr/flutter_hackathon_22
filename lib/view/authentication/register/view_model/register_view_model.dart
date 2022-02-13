@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/cache/ICache.dart';
 import '../../../../utils/constants/dummy_data.dart';
 import '../../../../utils/enum/image_enum.dart';
-import '../../../home/view/home_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
 import '../../../../utils/constants/hive_constants.dart';
 import '../../../../widget/bottom_navigation_bar.dart';
 import '../../../home/model/bulletin_model.dart';
@@ -16,8 +13,7 @@ class RegisterViewModel extends ChangeNotifier {
   RegisterViewModel(this.cache);
 
   final ICache<User> cache;
-  User? _currentUser;
-  User? get currentUser => _currentUser;
+  User? currentUser;
 
   final TextEditingController nameController = TextEditingController();
   final TextEditingController bioController = TextEditingController();
@@ -46,13 +42,16 @@ class RegisterViewModel extends ChangeNotifier {
       nameController.text,
       bioController.text,
       locationController.text,
-      0,
+      1800,
       image,
       [],
     );
-    _currentUser = user;
-    await _userBox.add(user);
+    
+    await _userBox.put('currentUser',user);
     await _addDummyDatas();
+
+    currentUser = _userBox.getAt(0);
+
 
     Navigator.pushAndRemoveUntil(
         context,

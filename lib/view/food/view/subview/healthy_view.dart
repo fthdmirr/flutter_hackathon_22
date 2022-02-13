@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon_2022/utils/constants/dummy_data.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../../widget/food_container.dart';
@@ -16,8 +17,8 @@ class HealthyView extends StatelessWidget {
         child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, childAspectRatio: 2 / 3),
-            itemCount: healthyFood.length,
+            itemCount: DummyDatas.healthyFoodList.length,
             itemBuilder: (BuildContext context, int index) =>
-                FoodContainer(food: healthyFood[index])));
+                FoodContainer(food: DummyDatas.healthyFoodList[index])));
   }
 }
