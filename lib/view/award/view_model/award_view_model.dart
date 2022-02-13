@@ -15,26 +15,22 @@ class AwardViewModel {
   List<Award> _ticketAward = [];
   List<Award> _foodAward = [];
 
-  final List<String> bookNames = ['Monte Kristo Kontu', 'Kızıl Nehirler'];
-  final List<String> electronicNames = ['Iphone 4'];
-  final List<String> ticketNames = ['Duman Konseri'];
-  final List<String> foodsNames = ['Avokado'];
 
   List<Award> get generateAwardList {
     switch (type) {
       case AwardEnum.book:
         return _bookAward = List.generate(
-            10,
+             DummyDatas.bookNames.length,
             (index) => Award(
                 AwardEnum.book,
                 DummyDatas.bookNames[index],
                 //TODO: kitapindex yapılacak
-                'kitap1'.toJpg,
+                'books/$index'.toJpg,
                 index * 100));
 
       case AwardEnum.electronic:
         return _electronicAward = List.generate(
-            10,
+            DummyDatas.electronicNames.length,
             (index) => Award(
                 AwardEnum.electronic,
                 DummyDatas.electronicNames[index],
@@ -43,15 +39,15 @@ class AwardViewModel {
 
       case AwardEnum.ticket:
         return _ticketAward = List.generate(
-            10,
+            DummyDatas.ticketNames.length,
             (index) => Award(AwardEnum.ticket, DummyDatas.ticketNames[index],
                 'ticket'.toJpg, index * 10));
 
       default:
         return _foodAward = List.generate(
-            10,
+             DummyDatas.foodsNames.length,
             (index) => Award(AwardEnum.food, DummyDatas.foodsNames[index],
-                'vegetables'.toJpg, index * 10));
+                'foods/$index'.toJpg, index * 15));
     }
   }
 }

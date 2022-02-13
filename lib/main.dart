@@ -1,33 +1,19 @@
 import 'package:flutter/material.dart';
-import 'core/cache/hive_cache.dart';
-import 'core/constants/app.dart';
-import 'utils/constants/hive_constants.dart';
-import 'view/home/view/home_view.dart';
-import 'view/home/view_model/home_view_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
+import 'core/cache/hive_cache.dart';
+import 'core/constants/app.dart';
+import 'utils/constants/hive_constants.dart';
 import 'utils/enum/image_enum.dart';
 import 'view/authentication/register/model/user_model.dart';
-import 'view/authentication/register/view/register_view.dart';
 import 'view/authentication/register/view_model/register_view_model.dart';
+import 'view/authentication/splash_screen/view/splash_screen_view.dart';
 import 'view/home/model/bulletin_model.dart';
 import 'view/home/model/group_model.dart';
-import 'widget/bottom_navigation_bar.dart';
+import 'view/home/view_model/home_view_model.dart';
 
 Future<void> main() async {
-
-//! food-award -->data
-//! food -->data
-
-//TODO: uygulama logic yazılacak
-//TODO: bottom app bar eklenecek
-//TODO:splash screen initilization yapılacak
-//TODO: widget dosyası utils altına atılacak
-//TODO: github read me yazılacak
-
-//TODO: clean code prensipleri uygulanıcak vakit kalırsa
-//TODO: animasyon eklenicek vakit kalırsa
 
   await Hive.initFlutter();
 
@@ -70,9 +56,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: AppConstants.APP_NAME,
         debugShowCheckedModeBanner: false,
-      
-       home: context.watch<RegisterViewModel>().currentUser != null
-            ? BottomNavigation()
-            : RegisterView());
+        home: SplashScreen());
   }
 }

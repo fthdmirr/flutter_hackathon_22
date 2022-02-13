@@ -54,9 +54,8 @@ flutter:
    - assets/lotties/
    - assets/images/
    - assets/logo/
-  # - assets/images/foods
+   - assets/images/foods/
+   - assets/images/books/
   # - assets/images/electronics
-  # - assets/images/tickets
-  # - assets/images/books
 
  

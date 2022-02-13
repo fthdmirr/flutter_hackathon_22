@@ -13,12 +13,6 @@ class FoodView extends StatefulWidget {
 class _FoodViewState extends State<FoodView> {
   final FoodViewModel food_view_model = FoodViewModel();
 
-  @override
-  void initState() {
-    super.initState();
-
-    food_view_model.initFoodLists;
-  }
 
   @override
   Widget build(BuildContext context) {
